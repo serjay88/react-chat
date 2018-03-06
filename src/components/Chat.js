@@ -23,7 +23,7 @@ const styles = theme => ({
   }, 
 })
 
-const Chat = ({classes}) => (
+const Chat = ({ classes }) => (
   <main className={classes.chatLayout}>
     <ChatMessageList messages={messages} />
     <MessageInput />

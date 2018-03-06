@@ -3,8 +3,6 @@ import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Input from 'material-ui/Input';
 
-import titleInitials from '../utils/title-initials';
-
 const styles = theme => ({
   messageInputWrapper: {
     position: 'fixed',
