@@ -30,7 +30,6 @@ const styles = theme => ({
 class WelcomePage extends React.Component {
   state = {
     activeTab: 0,
-<<<<<<< HEAD
   }
 
   componentDidMount() {
@@ -40,26 +39,15 @@ class WelcomePage extends React.Component {
   handleTabChange = (event, value) => {
     this.setState({ activeTab: value });
   }
-=======
-  };
-
-  handleTabChange = (event, value) => {
-    this.setState({ activeTab: value });
-  };
->>>>>>> adb43737d2722afb72795702ae3c506ad885f59d
 
   render() {
     const { classes, signup, login, isAuthenticated } = this.props;
     const { activeTab } = this.state;
 
     if (isAuthenticated) {
-<<<<<<< HEAD
       return (
         <Redirect to="/chat" />
       );
-=======
-
->>>>>>> adb43737d2722afb72795702ae3c506ad885f59d
     }
 
     return (
@@ -96,8 +84,4 @@ class WelcomePage extends React.Component {
   }
 }
 
-<<<<<<< HEAD
 export default withStyles(styles)(WelcomePage);
-=======
-export default withStyles(styles, { withTheme: true })(WelcomePage);
->>>>>>> adb43737d2722afb72795702ae3c506ad885f59d
