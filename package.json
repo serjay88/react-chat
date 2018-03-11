@@ -14,7 +14,10 @@
     "react-swipeable-views": "^0.12.13",
     "react-thunk": "^1.0.0",
     "redux": "^3.7.2",
+<<<<<<< HEAD
     "redux-logger": "^3.0.6",
+=======
+>>>>>>> adb43737d2722afb72795702ae3c506ad885f59d
     "redux-thunk": "^2.2.0",
     "typeface-roboto": "0.0.54"
   },
