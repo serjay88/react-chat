@@ -1,7 +1,6 @@
 import React from 'react';
 import MUIAvatar from 'material-ui/Avatar';
-import getColor from "../utils/color-from";
-
+import getColor from '../utils/color-from';
 import titleInitials from '../utils/title-initials';
 
 const Avatar = ({ colorFrom, children, ...rest }) => (

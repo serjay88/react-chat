@@ -1,25 +1,13 @@
 import React from 'react';
-import fetch from 'isomorphic-fetch';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from 'material-ui';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
-import Toolbar from 'material-ui/Toolbar';
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: 0,
-    marginRight: 0,
-    width: '100%',
-  },
   signUpButton: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 2
-  },
-});
+    marginTop: theme.spacing.unit * 2,
+  }
+})
 
 class SignupForm extends React.Component {
   state = {
@@ -49,7 +37,7 @@ class SignupForm extends React.Component {
     return isValid;
   }
 
-  hangeInputChange = (event) => {
+  handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
 
@@ -89,7 +77,7 @@ class SignupForm extends React.Component {
           margin="normal"
           autoComplete="username"
           value={username.value}
-          onChange={this.hangeInputChange}
+          onChange={this.handleInputChange}
           error={!username.isValid}
         />
         <TextField
@@ -100,22 +88,22 @@ class SignupForm extends React.Component {
           type="password"
           name="password"
           margin="normal"
-          autoComplete="password"
+          autoComplete="new-password"
           value={password.value}
-          onChange={this.hangeInputChange}
+          onChange={this.handleInputChange}
           error={!password.isValid}
         />
         <TextField
           required
           fullWidth
           label="Repeat password"
-          placeholder="Type your password..."
+          placeholder="Repeat your password..."
           type="password"
           name="repeatedPassword"
           margin="normal"
           autoComplete="new-password"
           value={repeatedPassword.value}
-          onChange={this.hangeInputChange}
+          onChange={this.handleInputChange}
           error={!repeatedPassword.isValid}
         />
         <Button
@@ -125,7 +113,7 @@ class SignupForm extends React.Component {
           color="primary"
           className={classes.signUpButton}
         >
-          Sign Up
+          Signup
         </Button>
     </form>
     );    

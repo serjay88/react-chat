@@ -9,6 +9,7 @@ import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
 import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
+import ErrorMessage from './ErrorMessage';
 
 const styles = theme => ({
   root: {
@@ -41,7 +42,7 @@ class WelcomePage extends React.Component {
   }
 
   render() {
-    const { classes, signup, login, isAuthenticated } = this.props;
+    const { classes, signup, login, isAuthenticated, error } = this.props;
     const { activeTab } = this.state;
 
     if (isAuthenticated) {
@@ -52,9 +53,9 @@ class WelcomePage extends React.Component {
 
     return (
       <React.Fragment>
-        <AppBar color="primary" className={classes.appBar}>
+        <AppBar>
           <Toolbar>
-            <Typography variant="title" color="inherit" noWrap>
+            <Typography variant="title" color="inherit" style={{ flex: 1 }}>
               DogeCodes React Chat
             </Typography>
           </Toolbar>
@@ -79,6 +80,7 @@ class WelcomePage extends React.Component {
             </Paper>
           </Grid>
         </Grid>
+        <ErrorMessage error={error} />
       </React.Fragment>
     );
   }

@@ -1,21 +1,10 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from 'material-ui';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
-import Toolbar from 'material-ui/Toolbar';
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: 0,
-    marginRight: 0,
-    width: '100%',
-  },
-  loginBtn: {
-    width: '100%',
+  signUpButton: {
     marginTop: theme.spacing.unit * 2,
   },
 });
@@ -32,15 +21,15 @@ class LoginForm extends React.Component {
     },
   }
 
-  hangeInputChange = (event) => {
+  handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
 
     this.setState((prevState) => ({
       [name]: {
         ...prevState[name],
-        value
-      }
+        value,
+      },
     }));
   }
 
@@ -68,7 +57,7 @@ class LoginForm extends React.Component {
           margin="normal"
           autoComplete="username"
           value={username.value}
-          onChange={this.hangeInputChange}
+          onChange={this.handleInputChange}
           error={!username.isValid}
         />
         <TextField
@@ -79,9 +68,9 @@ class LoginForm extends React.Component {
           type="password"
           name="password"
           margin="normal"
-          autoComplete="password"
+          autoComplete="current-password"
           value={password.value}
-          onChange={this.hangeInputChange}
+          onChange={this.handleInputChange}
           error={!password.isValid}
         />
         <Button
@@ -89,7 +78,7 @@ class LoginForm extends React.Component {
           variant="raised"
           type="submit"
           color="primary"
-          className={classes.loginBtn}
+          className={classes.signUpButton}
         >
           Login
         </Button>

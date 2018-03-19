@@ -1,27 +1,31 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from '../containers/PrivateRoute';
 import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';
 import history from '../utils/history';
-import configureStore from '../store';
 
-import titleInitials from '../utils/title-initials';
+const styles = theme => ({
+  root: {
+    position: 'relative',
+    display: 'flex',
+    width: '100%',
+    height: '100%',
+    backgroundColor: theme.palette.background.default,
+  },
+});
 
-const App = () => (  
-  <Provider store={store}>
-    <Router history={history}>
+const App = ({ classes }) => (
+  <Router history={history}>
+    <div className={classes.root}>
       <Switch>
         <Route exact path="/(welcome)?" component={WelcomePage} />
-        <PrivateRoute path="/chat" component={ChatPage} />
+        <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
         <Redirect to="/" />
       </Switch>
-    </Router>
-  </Provider>
+    </div>
+  </Router>
 );
 
-const store = configureStore();
-
-export default App;
+export default withStyles(styles)(App);
