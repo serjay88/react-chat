@@ -9,7 +9,6 @@ const initialState = {
   byIds: {},
 };
 
-
 const activeId = (state = initialState.activeId, action) => {
   switch (action.type) {
     case types.SET_ACTIVE_CHAT:
@@ -64,10 +63,13 @@ const byIds = (state = initialState.byIds, action) => {
     case types.FETCH_MY_CHATS_SUCCESS:
       return {
         ...state,
-        ...action.payload.chats.reduce((ids, chat) => ({
-          ...ids,
-          [getChatId(chat)]: chat,
-        }), {}),
+        ...action.payload.chats.reduce(
+          (ids, chat) => ({
+            ...ids,
+            [getChatId(chat)]: chat,
+          }),
+          {},
+        ),
       };
     case types.JOIN_CHAT_SUCCESS:
     case types.LEAVE_CHAT_SUCCESS:

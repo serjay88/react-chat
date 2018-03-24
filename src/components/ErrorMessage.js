@@ -24,7 +24,6 @@ class ErrorMessage extends React.Component {
       return null;
     }
 
-
     return (
       <Snackbar
         anchorOrigin={{
@@ -36,12 +35,7 @@ class ErrorMessage extends React.Component {
         onClose={this.handleClose}
         message={<span>{error.message}</span>}
         action={[
-          <IconButton
-            key="close"
-            aria-label="Close"
-            color="inherit"
-            onClick={this.handleClose}
-          >
+          <IconButton key="close" aria-label="Close" color="inherit" onClick={this.handleClose}>
             <CloseIcon />
           </IconButton>,
         ]}

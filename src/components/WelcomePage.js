@@ -20,7 +20,7 @@ const styles = theme => ({
     width: '100%',
   },
   paper: {
-    marginTop: 64 + (theme.spacing.unit * 3),
+    marginTop: 64 + theme.spacing.unit * 3,
     width: 500,
   },
   tabContent: {
@@ -31,7 +31,7 @@ const styles = theme => ({
 class WelcomePage extends React.Component {
   state = {
     activeTab: 0,
-  }
+  };
 
   componentDidMount() {
     this.props.recieveAuth();
@@ -39,7 +39,7 @@ class WelcomePage extends React.Component {
 
   handleTabChange = (event, value) => {
     this.setState({ activeTab: value });
-  }
+  };
 
   render() {
     const {
@@ -48,9 +48,7 @@ class WelcomePage extends React.Component {
     const { activeTab } = this.state;
 
     if (isAuthenticated) {
-      return (
-        <Redirect to="/chat" />
-      );
+      return <Redirect to="/chat" />;
     }
 
     return (
@@ -66,11 +64,7 @@ class WelcomePage extends React.Component {
           <Grid item>
             <Paper className={classes.paper}>
               <AppBar position="static" color="default">
-                <Tabs
-                  value={activeTab}
-                  onChange={this.handleTabChange}
-                  fullWidth
-                >
+                <Tabs value={activeTab} onChange={this.handleTabChange} fullWidth>
                   <Tab label="Login" />
                   <Tab label="Sign Up" />
                 </Tabs>
