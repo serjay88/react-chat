@@ -10,14 +10,14 @@ export function signup(username, password) {
     }
 
     dispatch({
-      type: types.SIGNUP_REQUEST
+      type: types.SIGNUP_REQUEST,
     });
-    
+
     return callApi('/signup', undefined, { method: 'POST' }, {
       username,
-      password
+      password,
     })
-      .then(json => { 
+      .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');
         }
@@ -27,14 +27,14 @@ export function signup(username, password) {
 
         dispatch({
           type: types.SIGNUP_SUCCESS,
-          payload: json
-        })
+          payload: json,
+        });
       })
       .catch(reason => dispatch({
         type: types.SIGNUP_FAILURE,
         payload: reason,
-      })); 
-  }
+      }));
+  };
 }
 
 export function login(username, password) {
@@ -46,31 +46,31 @@ export function login(username, password) {
     }
 
     dispatch({
-      type: types.LOGIN_REQUEST
+      type: types.LOGIN_REQUEST,
     });
 
     return callApi('/login', undefined, { method: 'POST' }, {
       username,
-      password
-    })      
-      .then(json => {
+      password,
+    })
+      .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');
         }
 
         // Save JWT to LocalStorage
         localStorage.setItem('token', json.token);
-        
+
         dispatch({
           type: types.LOGIN_SUCCESS,
-          payload: json
-        })
+          payload: json,
+        });
       })
       .catch(reason => dispatch({
         type: types.LOGIN_FAILURE,
-        payload: reason
-      })); 
-  }
+        payload: reason,
+      }));
+  };
 }
 
 export function logout() {
@@ -82,23 +82,23 @@ export function logout() {
     }
 
     dispatch({
-      type: types.LOGOUT_REQUEST
+      type: types.LOGOUT_REQUEST,
     });
 
     return callApi('/logout')
-      .then(json => {
+      .then((json) => {
         localStorage.removeItem('token');
-        
+
         dispatch({
           type: types.LOGOUT_SUCCESS,
-          payload: json
-        })
+          payload: json,
+        });
       })
       .catch(reason => dispatch({
         type: types.LOGOUT_FAILURE,
-        payload: reason
-      })); 
-  }
+        payload: reason,
+      }));
+  };
 }
 
 export function recieveAuth() {
@@ -112,16 +112,16 @@ export function recieveAuth() {
 
     dispatch({
       type: types.RECIEVE_AUTH_REQUEST,
-    })
+    });
 
-    return callApi('/users/me', token)   
+    return callApi('/users/me', token)
       .then(json => dispatch({
         type: types.RECIEVE_AUTH_SUCCESS,
-        payload: json
+        payload: json,
       }))
       .catch(reason => dispatch({
         type: types.RECIEVE_AUTH_FAILURE,
-        payload: reason
-      })); 
-  }
+        payload: reason,
+      }));
+  };
 }

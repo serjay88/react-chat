@@ -6,8 +6,10 @@ import ErrorMessage from './ErrorMessage';
 
 class ChatPage extends React.Component {
   componentDidMount() {
-    const { match, fetchAllChats, fetchMyChats, setActiveChat, socketsConnect, mountChat } = this.props;
-    
+    const {
+      match, fetchAllChats, fetchMyChats, setActiveChat, socketsConnect, mountChat,
+    } = this.props;
+
     Promise.all([
       fetchAllChats(),
       fetchMyChats(),
@@ -20,13 +22,15 @@ class ChatPage extends React.Component {
         // If we pass a chatId, then fetch messages from chat
         if (chatId) {
           setActiveChat(chatId);
-          mountChat(chatId)
+          mountChat(chatId);
         }
       });
   }
 
   componentWillReceiveProps(nextProps) {
-    const { match: { params }, setActiveChat, unmountChat, mountChat } = this.props;
+    const {
+      match: { params }, setActiveChat, unmountChat, mountChat,
+    } = this.props;
     const { params: nextParams } = nextProps.match;
 
     // If we change route, then fetch messages from chat by chatID
@@ -44,7 +48,7 @@ class ChatPage extends React.Component {
       messages, editUser, error, isConnected,
     } = this.props;
 
-    return(
+    return (
       <React.Fragment>
         <ChatHeader
           isConnected={isConnected}
@@ -55,7 +59,7 @@ class ChatPage extends React.Component {
           logout={logout}
           editUser={editUser}
         />
-        <Sidebar 
+        <Sidebar
           isConnected={isConnected}
           chats={chats}
           createChat={createChat}
@@ -68,13 +72,11 @@ class ChatPage extends React.Component {
           sendMessage={sendMessage}
           joinChat={joinChat}
         />
-      <ErrorMessage error={error} />
+        <ErrorMessage error={error} />
       </React.Fragment>
     );
   }
 }
-  
 
- 
 
 export default ChatPage;

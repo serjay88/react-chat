@@ -13,11 +13,11 @@ class LoginForm extends React.Component {
   state = {
     username: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     password: {
       value: '',
-      isValid: true
+      isValid: true,
     },
   }
 
@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
     event.persist();
     const { name, value } = event.target;
 
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       [name]: {
         ...prevState[name],
         value,
@@ -44,8 +44,8 @@ class LoginForm extends React.Component {
   render() {
     const { classes } = this.props;
     const { username, password } = this.state;
-  
-     return (
+
+    return (
       <form onSubmit={this.handleSubmit}>
         <TextField
           required
@@ -82,11 +82,10 @@ class LoginForm extends React.Component {
         >
           Login
         </Button>
-    </form>
-    );    
-  }  
+      </form>
+    );
+  }
 }
-  
 
 
 export default withStyles(styles)(LoginForm);

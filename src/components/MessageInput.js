@@ -11,7 +11,7 @@ const styles = theme => ({
     right: 0,
     bottom: 0,
     width: 'calc(100% - 320px)',
-    padding: theme.spacing.unit * 3
+    padding: theme.spacing.unit * 3,
   },
   messageInput: {
     padding: theme.spacing.unit * 2,
@@ -20,12 +20,12 @@ const styles = theme => ({
 
 class MessageInput extends React.Component {
   state = {
-    value: ''
+    value: '',
   }
 
   handleValueChange = (event) => {
     this.setState({
-      value: event.target.value
+      value: event.target.value,
     });
   }
 
@@ -39,7 +39,9 @@ class MessageInput extends React.Component {
   }
 
   render() {
-    const { classes, showJoinButton, onJoinButtonClick, disabled } = this.props;
+    const {
+      classes, showJoinButton, onJoinButtonClick, disabled,
+    } = this.props;
 
     return (
       <div className={classes.messageInputWrapper}>
@@ -55,8 +57,8 @@ class MessageInput extends React.Component {
               Join
             </Button>
           ) : (
-            <Input 
-              fullWidth 
+            <Input
+              fullWidth
               placeholder="Type your message..."
               disabled={disabled}
               value={this.state.value}
@@ -66,10 +68,9 @@ class MessageInput extends React.Component {
           )}
         </Paper>
       </div>
-    )
+    );
   }
 }
-  
 
 
 export default withStyles(styles)(MessageInput);

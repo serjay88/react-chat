@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'material-ui/Button';
 import Snackbar from 'material-ui/Snackbar';
 import IconButton from 'material-ui/IconButton';
 import CloseIcon from 'material-ui-icons/Close';
@@ -9,15 +8,15 @@ class ErrorMessage extends React.Component {
     open: false,
   };
 
-  handleCloseSnackbar = (event, reason) => {
-    this.setState({ open: false });
-  };
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.error) {
-      this.setState({ open: true })
+      this.setState({ open: true });
     }
   }
+
+  handleCloseSnackbar = () => {
+    this.setState({ open: false });
+  };
 
   render() {
     const { error } = this.props;
@@ -46,7 +45,7 @@ class ErrorMessage extends React.Component {
             <CloseIcon />
           </IconButton>,
         ]}
-     />
+      />
     );
   }
 }

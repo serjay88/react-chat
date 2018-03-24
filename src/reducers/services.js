@@ -1,5 +1,5 @@
-import * as types from '../constants';
 import { combineReducers } from 'redux';
+import * as types from '../constants';
 
 const initialState = {
   isFetching: {
@@ -22,10 +22,10 @@ const initialState = {
     chat: null,
   },
   isConnected: false,
-}
+};
 
 export const isFetching = (state = initialState.isFetching, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.SIGNUP_REQUEST:
       return { ...state, signup: true };
     case types.LOGIN_REQUEST:
@@ -52,7 +52,7 @@ export const isFetching = (state = initialState.isFetching, action) => {
       return { ...state, sockets: true };
     case types.EDIT_USER_REQUEST:
       return { ...state, editUser: true };
-    
+
     case types.SIGNUP_SUCCESS:
     case types.SIGNUP_FAILURE:
       return { ...state, signup: false };
@@ -66,16 +66,16 @@ export const isFetching = (state = initialState.isFetching, action) => {
     case types.RECIEVE_AUTH_FAILURE:
       return { ...state, recieveAuth: false };
     case types.FETCH_ALL_CHATS_SUCCESS:
-    case types.FETCH_ALL_CHATS_REQUEST:
+    case types.FETCH_ALL_CHATS_FAILURE:
       return { ...state, allChats: false };
     case types.FETCH_MY_CHATS_SUCCESS:
-    case types.FETCH_MY_CHATS_REQUEST:
+    case types.FETCH_MY_CHATS_FAILURE:
       return { ...state, myChats: false };
     case types.FETCH_CHAT_SUCCESS:
     case types.FETCH_CHAT_FAILURE:
       return { ...state, chat: false };
     case types.CREATE_CHAT_SUCCESS:
-    case types.CREATE_CHAT_FAILURE:    
+    case types.CREATE_CHAT_FAILURE:
       return { ...state, createChat: false };
     case types.JOIN_CHAT_SUCCESS:
     case types.JOIN_CHAT_FAILURE:
@@ -94,8 +94,8 @@ export const isFetching = (state = initialState.isFetching, action) => {
       return { ...state, editUser: false };
     default:
       return state;
-  }    
-}
+  }
+};
 
 export const errors = (state = initialState.errors, action) => {
   switch (action.type) {
@@ -110,7 +110,7 @@ export const errors = (state = initialState.errors, action) => {
     case types.LOGIN_SUCCESS:
     case types.LOGOUT_SUCCESS:
     // case types.RECIEVE_AUTH_SUCCESS:
-      return { ...state, auth: null };      
+      return { ...state, auth: null };
 
     case types.RECIEVE_AUTH_FAILURE:
     case types.FETCH_ALL_CHATS_FAILURE:
@@ -132,23 +132,23 @@ export const errors = (state = initialState.errors, action) => {
     case types.DELETE_CHAT_SUCCESS:
     case types.SOCKETS_CONNECTION_SUCCESS:
     case types.EDIT_USER_SUCCESS:
-        return { ...state, chat: null };
+      return { ...state, chat: null };
     default:
       return state;
   }
-}
+};
 
 export const isConnected = (state = initialState.isConnected, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.SOCKETS_CONNECTION_MISSING:
     case types.SOCKETS_CONNECTION_FAILURE:
       return false;
     case types.SOCKETS_CONNECTION_SUCCESS:
       return true;
-    default: 
+    default:
       return state;
   }
-}
+};
 
 export default combineReducers({
   isFetching,

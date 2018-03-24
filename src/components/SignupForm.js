@@ -6,22 +6,22 @@ import Button from 'material-ui/Button';
 const styles = theme => ({
   signUpButton: {
     marginTop: theme.spacing.unit * 2,
-  }
-})
+  },
+});
 
 class SignupForm extends React.Component {
   state = {
     username: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     password: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     repeatedPassword: {
       value: '',
-      isValid: true
+      isValid: true,
     },
   }
 
@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
 
     this.setState({
       password: { ...password, isValid },
-      repeatedPassword: { ...repeatedPassword, isValid }
+      repeatedPassword: { ...repeatedPassword, isValid },
     });
 
     return isValid;
@@ -41,11 +41,11 @@ class SignupForm extends React.Component {
     event.persist();
     const { name, value } = event.target;
 
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       [name]: {
         ...prevState[name],
-        value
-      }
+        value,
+      },
     }));
   }
 
@@ -54,18 +54,18 @@ class SignupForm extends React.Component {
 
     if (!this.validate()) {
       return;
-    } 
+    }
 
     const { username, password } = this.state;
 
-    this.props.onSubmit(username.value, password.value); 
+    this.props.onSubmit(username.value, password.value);
   }
 
   render() {
     const { classes } = this.props;
-    const { username, password, repeatedPassword  } = this.state;
-  
-     return (
+    const { username, password, repeatedPassword } = this.state;
+
+    return (
       <form onSubmit={this.handleSubmit}>
         <TextField
           required
@@ -115,11 +115,10 @@ class SignupForm extends React.Component {
         >
           Signup
         </Button>
-    </form>
-    );    
-  }  
+      </form>
+    );
+  }
 }
-  
 
 
 export default withStyles(styles)(SignupForm);

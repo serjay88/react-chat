@@ -16,14 +16,14 @@ export default function auth(state = initialState, action) {
         ...state,
         isAuthenticated: true,
         user: action.payload.user,
-        token: action.payload.token
+        token: action.payload.token,
       };
     case types.RECIEVE_AUTH_SUCCESS:
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload.user
-      }
+        user: action.payload.user,
+      };
     case types.SIGNUP_FAILURE:
     case types.LOGIN_FAILURE:
     case types.RECIEVE_AUTH_FAILURE:
@@ -32,7 +32,7 @@ export default function auth(state = initialState, action) {
         ...state,
         isAuthenticated: false,
         user: null,
-        token: ''
+        token: '',
       };
     default:
       return state;

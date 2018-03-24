@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
@@ -20,12 +20,12 @@ const styles = theme => ({
     width: '100%',
   },
   paper: {
-    marginTop: 64 + theme.spacing.unit * 3,
+    marginTop: 64 + (theme.spacing.unit * 3),
     width: 500,
   },
   tabContent: {
-    padding:  theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 3,
+  },
 });
 
 class WelcomePage extends React.Component {
@@ -42,7 +42,9 @@ class WelcomePage extends React.Component {
   }
 
   render() {
-    const { classes, signup, login, isAuthenticated, error } = this.props;
+    const {
+      classes, signup, login, isAuthenticated, error,
+    } = this.props;
     const { activeTab } = this.state;
 
     if (isAuthenticated) {
@@ -59,7 +61,7 @@ class WelcomePage extends React.Component {
               DogeCodes React Chat
             </Typography>
           </Toolbar>
-        </AppBar>          
+        </AppBar>
         <Grid container justify="center">
           <Grid item>
             <Paper className={classes.paper}>
@@ -72,11 +74,11 @@ class WelcomePage extends React.Component {
                   <Tab label="Login" />
                   <Tab label="Sign Up" />
                 </Tabs>
-            </AppBar>
-            <div className={classes.tabContent}>
-              {activeTab === 0 && <LoginForm onSubmit={login} />}
-              {activeTab === 1 && <SignupForm onSubmit={signup} />}
-            </div>
+              </AppBar>
+              <div className={classes.tabContent}>
+                {activeTab === 0 && <LoginForm onSubmit={login} />}
+                {activeTab === 1 && <SignupForm onSubmit={signup} />}
+              </div>
             </Paper>
           </Grid>
         </Grid>
