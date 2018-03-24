@@ -20,7 +20,7 @@ const styles = theme => ({
     width: '100%',
   },
   paper: {
-    marginTop: 64 + theme.spacing.unit * 3,
+    marginTop: 64 + (theme.spacing.unit * 3),
     width: 500,
   },
   tabContent: {
