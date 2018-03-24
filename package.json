@@ -50,12 +50,12 @@
     "**/*.js": [
       "npm run lint:fix",
       "npm run format",
-      "git add"]
+      "git add"],
+
       
-      ,
-      "**/*.json": [
-        "npm run format",
-        "git add"
-      ]
+    "**/*.json": [
+      "npm run format",
+      "git add"
+    ]
   }
 }
