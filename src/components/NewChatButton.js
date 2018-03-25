@@ -12,7 +12,8 @@ const styles = theme => ({
     position: 'absolute',
     left: 'auto',
     right: theme.spacing.unit * 3,
-    bottom: theme.spacing.unit * 3 + 48, // + bottom navigation
+    // eslint-disable-next-line
+    bottom: theme.spacing.unit * 3 + 48,
   },
   modalWrapper: {
     display: 'flex',
