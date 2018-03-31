@@ -35,7 +35,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier-eslint --write \"**/*.js\"",
     "precommit": "lint-staged",
-    "prepush": "npm test"
+    "prepush": "npm run test"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
