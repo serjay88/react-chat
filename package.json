@@ -50,7 +50,7 @@
     "react-test-renderer": "^16.3.0"
   },
   "lint-staged": {
-    "**/*.js": ["npm run lint:fix", "npm run format", "git add"],
-    "**/*.json": ["npm run format", "git add"]
+    "**/*.js": ["eslint --fix", "prettier-eslint --write", "git add"],
+    "**/*.json": ["prettier-eslint --write", "git add"]
   }
 }
