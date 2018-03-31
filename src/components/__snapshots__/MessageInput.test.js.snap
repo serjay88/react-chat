@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageInput /> renders button  1`] = `
+<div
+  className="MessageInput-messageInputWrapper-54"
+>
+  <div
+    className="MuiPaper-root-56 MuiPaper-shadow6-64 MuiPaper-rounded-57 MessageInput-messageInput-55"
+  >
+    <button
+      className="MuiButtonBase-root-98 MuiButton-root-83 MuiButton-raised-88 MuiButton-raisedPrimary-90 MuiButton-fullWidth-97"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-84"
+      >
+        Join
+      </span>
+      <span
+        className="MuiTouchRipple-root-100"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<MessageInput /> renders disabled button 1`] = `
+<div
+  className="MessageInput-messageInputWrapper-54"
+>
+  <div
+    className="MuiPaper-root-56 MuiPaper-shadow6-64 MuiPaper-rounded-57 MessageInput-messageInput-55"
+  >
+    <button
+      className="MuiButtonBase-root-98 MuiButtonBase-disabled-99 MuiButton-root-83 MuiButton-raised-88 MuiButton-raisedPrimary-90 MuiButton-disabled-92 MuiButton-fullWidth-97"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-84"
+      >
+        Join
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<MessageInput /> renders disabled input  1`] = `
+<div
+  className="MessageInput-messageInputWrapper-54"
+>
+  <div
+    className="MuiPaper-root-56 MuiPaper-shadow6-64 MuiPaper-rounded-57 MessageInput-messageInput-55"
+  >
+    <button
+      className="MuiButtonBase-root-98 MuiButtonBase-disabled-99 MuiButton-root-83 MuiButton-raised-88 MuiButton-raisedPrimary-90 MuiButton-disabled-92 MuiButton-fullWidth-97"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-84"
+      >
+        Join
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<MessageInput /> renders input  1`] = `
+<div
+  className="MessageInput-messageInputWrapper-54"
+>
+  <div
+    className="MuiPaper-root-56 MuiPaper-shadow6-64 MuiPaper-rounded-57 MessageInput-messageInput-55"
+  >
+    <button
+      className="MuiButtonBase-root-98 MuiButton-root-83 MuiButton-raised-88 MuiButton-raisedPrimary-90 MuiButton-fullWidth-97"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-84"
+      >
+        Join
+      </span>
+      <span
+        className="MuiTouchRipple-root-100"
+      />
+    </button>
+  </div>
+</div>
+`;

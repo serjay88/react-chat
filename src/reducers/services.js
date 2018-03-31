@@ -112,7 +112,6 @@ export const errors = (state = initialState.errors, action) => {
       // case types.RECIEVE_AUTH_SUCCESS:
       return { ...state, auth: null };
 
-    case types.RECIEVE_AUTH_FAILURE:
     case types.FETCH_ALL_CHATS_FAILURE:
     case types.FETCH_MY_CHATS_FAILURE:
     case types.FETCH_CHAT_FAILURE:

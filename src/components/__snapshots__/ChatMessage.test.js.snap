@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChatList /> renders correctly  1`] = `
+<div
+  className="ChatMessage-messageWrapper-31"
+>
+  <p
+    className="MuiTypography-root-37 MuiTypography-body1-46 ChatMessage-statusMessage-35"
+  >
+    <span
+      className="MuiTypography-root-37 MuiTypography-caption-47 ChatMessage-statusMessageUser-36"
+      style={
+        Object {
+          "color": "#ffc107",
+        }
+      }
+    >
+      Name Surname
+    </span>
+    12345
+    <span
+      className="MuiTypography-root-37 MuiTypography-caption-47"
+    >
+      2 days ago
+    </span>
+  </p>
+</div>
+`;

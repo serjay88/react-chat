@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 import rootReducer from '../reducers';
 
-export default function configureStore() {
+export default function cofigureStore() {
   if (process.env.NODE_ENV === 'production') {
     return createStore(rootReducer, applyMiddleware(thunkMiddleware));
   }

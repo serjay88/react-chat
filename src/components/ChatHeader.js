@@ -1,5 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import AppBar from 'material-ui/AppBar';
@@ -52,9 +53,36 @@ const ChatHeader = ({
           DogeCodes React Chat
         </Typography>
       )}
-      <UserMenu activeUser={activeUser} onLogoutClick={logout} onEditProfileClick={editUser} />
+      <UserMenu
+        disabled={!isConnected}
+        activeUser={activeUser}
+        onLogoutClick={logout}
+        onEditProfileClick={editUser}
+      />
     </Toolbar>
   </AppBar>
 );
+
+ChatHeader.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  activeUser: PropTypes.shape({
+    isMember: PropTypes.bool.isRequired,
+    isCreator: PropTypes.bool.isRequired,
+    isChatMember: PropTypes.bool.isRequired,
+  }).isRequired,
+  activeChat: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+  logout: PropTypes.func.isRequired,
+  leaveChat: PropTypes.func.isRequired,
+  deleteChat: PropTypes.func.isRequired,
+  editUser: PropTypes.func.isRequired,
+  isConnected: PropTypes.bool.isRequired,
+};
+
+ChatHeader.defaultProps = {
+  activeChat: null,
+};
 
 export default withStyles(styles)(ChatHeader);

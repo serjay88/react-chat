@@ -12,8 +12,9 @@ export default combineReducers({
   services,
 });
 
-export const getActiveUser = state => state.auth.user;
+// eslint-disable-next-line
 export const getUserId = user => user._id;
+export const getActiveUser = state => state.auth.user;
 
 export const isCreator = (state, chat) => {
   try {

@@ -116,12 +116,7 @@ export function logout() {
 
 export function recieveAuth() {
   return (dispatch, getState) => {
-    const { isFetching } = getState().services;
     const { token } = getState().auth;
-
-    if (isFetching.recieveAuth) {
-      return Promise.resolve();
-    }
 
     dispatch({
       type: types.RECIEVE_AUTH_REQUEST,

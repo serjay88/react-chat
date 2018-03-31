@@ -1,5 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 import SocketIOClient from 'socket.io-client';
+import config from '../config';
 import * as types from '../constants/sockets';
 import { redirect } from './services';
 
@@ -26,7 +27,7 @@ export function socketsConnect() {
       type: types.SOCKETS_CONNECTION_REQUEST,
     });
 
-    socket = SocketIOClient('ws://localhost:8000/', {
+    socket = SocketIOClient(config.SOCKETS_URI, {
       query: { token },
     });
 
@@ -39,7 +40,7 @@ export function socketsConnect() {
     socket.on('error', (error) => {
       dispatch({
         type: types.SOCKETS_CONNECTION_FAILURE,
-        payload: new Error(`Connection ${error}`),
+        payload: new Error(`Connection: ${error}`),
       });
     });
 
@@ -60,7 +61,7 @@ export function socketsConnect() {
     socket.on('new-chat', ({ chat }) => {
       dispatch({
         type: types.RECIEVE_NEW_CHAT,
-        payload: chat,
+        payload: { chat },
       });
     });
 
@@ -68,7 +69,7 @@ export function socketsConnect() {
       const { activeId } = getState().chats;
       dispatch({
         type: types.RECIEVE_DELETED_CHAT,
-        payload: chat,
+        payload: { chat },
       });
 
       if (activeId === chat._id) {
