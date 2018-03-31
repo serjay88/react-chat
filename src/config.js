@@ -1,10 +1,10 @@
 export default {
   API_URI:
     process.env.NODE_ENV === 'production'
-      ? 'https://dogecodes-chat-api.herokuapp.com/v1'
+      ? 'https://hasky-react-chat.herokuapp.com/'
       : 'http://localhost:8000/v1',
   SOCKETS_URI:
     process.env.NODE_ENV === 'production'
-      ? 'wss://dogecodes-chat-api.herokuapp.com/v1'
+      ? 'wss://hasky-react-chat.herokuapp.com/'
       : 'ws://localhost:8000/',
 };
