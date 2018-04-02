@@ -1,24 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import classnames from "classnames";
-import Avatar from 'material-ui/Avatar';
-import Paper from 'material-ui/Paper';
-import Input from 'material-ui/Input';
-import ChatPage from './ChatPage';
-import WelcomePage from './WelcomePage';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import PrivateRoute from '../containers/PrivateRoute';
+import ChatPage from '../containers/ChatPage';
+import WelcomePage from '../containers/WelcomePage';
+import history from '../utils/history';
 
-import titleInitials from '../utils/title-initials';
+const styles = theme => ({
+  root: {
+    position: 'relative',
+    display: 'flex',
+    width: '100%',
+    height: '100%',
+    backgroundColor: theme.palette.background.default,
+  },
+});
 
-const App = () => (  
-  <Router>
-    <Switch>
-      <Route exact path="/(welcome)?" component={WelcomePage} />
-      <Route path="/chat" component={ChatPage} />
-      <Redirect to="/" />
-    </Switch>
+const App = ({ classes }) => (
+  <Router history={history}>
+    <div className={classes.root}>
+      <Switch>
+        <Route exact path="/(welcome)?" component={WelcomePage} />
+        <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
+        <Redirect to="/" />
+      </Switch>
+    </div>
   </Router>
 );
 
+App.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
-export default App;
+export default withStyles(styles)(App);
